@@ -1,4 +1,4 @@
-module oc-console
+module kubeconsole
 
 go 1.12
 

@@ -3,12 +3,11 @@ package main
 import (
 	"flag"
 	"fmt"
-	"oc-console/pkg/browser"
-	"oc-console/pkg/kubeconfig"
+	"kubeconsole/pkg/browser"
+	"kubeconsole/pkg/kubeconfig"
 )
 
 func main() {
-
 	kubeconfig := kubeconfig.Get()
 
 	showURL := flag.Bool("url", false, "display URL in console")
