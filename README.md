@@ -1,4 +1,4 @@
-# Kubeconsole
+# kubectl-console
 
 To install, run:
 
