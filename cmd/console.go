@@ -16,6 +16,7 @@ func main() {
 	if *showURL {
 		fmt.Printf("Server URL: %s", kubeconfig.Host)
 	} else {
+		fmt.Println("Opening in browser...")
 		browser.Open(kubeconfig.Host)
 	}
 }
