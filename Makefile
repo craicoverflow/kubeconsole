@@ -44,20 +44,6 @@ build-macos:
 clean:
 	rm -rf ./dist
 
-# .PHONY: build-latest-image
-# build-latest-image: build-linux
-# 	docker build -t $(IMAGE_LATEST_TAG) --build-arg BINARY=$(BINARY_LINUX_DIR) .
-
-# .PHONY: build-release-image
-# build-release-image:
-# 	docker build -t $(IMAGE_LATEST_TAG) -t $(IMAGE_RELEASE_TAG) --build-arg BINARY=$(BINARY_LINUX_64) .
-
-# .PHONY: push-release-image
-# push-release-image:
-# 	@docker login --username $(QUAY_USERNAME) --password $(QUAY_PASSWORD) $(IMAGE_REGISTRY)
-# 	docker push $(IMAGE_LATEST_TAG)
-# 	docker push $(IMAGE_RELEASE_TAG)
-
 # format files
 .PHONY: fmt
 fmt:
