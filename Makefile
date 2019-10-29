@@ -20,9 +20,9 @@ ifeq ($(UNAME), Linux)
 	make build-linux
 	sudo mv $(BINARY_LINUX_DIR) /usr/local/bin
 endif
-ifeq ($(UNAME), Solaris)
-	build-macos
-	sudo mv $(BUILD_MACOS_DIR) /usr/local/bin
+ifeq ($(UNAME), Darwin)
+	make build-macos
+	sudo mv $(BINARY_MACOS_DIR) /usr/local/bin
 endif
 
 .PHONY: uninstall
