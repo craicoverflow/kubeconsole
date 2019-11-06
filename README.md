@@ -1,27 +1,86 @@
-# kubectl-console
+# Kubectl Console
 
-kubectl-console is plugin for `kubectl` which opens the server URL of your current cluster in your browser.
+`kubectl-console` is a plugin for `kubectl` and `oc` which opens the URL of your server in your browser.
 
-To install, run:
+## Installation
 
-```sh
-make install
-```
-
-To open the server in your browser:
+To install the binary, you can use cURL or Wget:
 
 ```sh
-kubectl console
+curl -o- https://raw.githubusercontent.com/craicoverflow/kubectl-console/master/scripts/install.sh | bash
 ```
-
-To print the server URL in your terminal:
 
 ```sh
-kubectl console --url
+wget -gO- https://raw.githubusercontent.com/craicoverflow/kubectl-console/master/scripts/install.sh | bash
 ```
 
-To uninstall run:
+## Usage
+
+It's really simple to install.
+
+## kubectl
+
+To use this plugin with `kubectl`, simply enter the following command:
 
 ```sh
-make uninstall
+$ kubectl console
+Opening in browser...
 ```
+
+## oc
+
+You can also use this plugin with `oc`. 
+
+To use with `oc` >= 4, enter:
+
+```sh
+$ oc console
+Opening in browser...
+```
+
+To use `oc` < 4, enter:
+
+```sh
+$ oc plugin console
+Opening in browser
+```
+
+## Flags
+
+- `--url` - Displays the server URL in the terminal, instead of opening the browser. 
+
+## Development
+
+### Requirements
+
+- Go >= 1.11
+- `kubectl` installed
+- `oc` installed (optional)
+
+### Setup
+
+To install required dependencies:
+
+```sh
+go get
+```
+
+### Running
+
+To run the program in development mode:
+
+```sh
+go run cmd/console.go
+```
+
+### Building
+
+To build the binaries:
+
+```sh
+make build
+```
+
+## Contributing
+
+All PRs, issues and suggestions are welcome 🤓.
