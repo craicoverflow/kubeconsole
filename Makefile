@@ -3,8 +3,10 @@ ORG_NAME = craicoverflow
 APP_CMD = ./cmd/console.go
 RELEASE_TAG = $(CIRCLE_TAG)
 BINARY ?= console
-BINARY_LINUX_DIR = ./dist/linux_amd64
-BINARY_MACOS_DIR = ./dist/macos_darwin
+TAR_LINUX_NAME = linux_amd64
+TAR_MACOS_NAME = macos_darwin
+BINARY_LINUX_DIR = ./dist/$(TAR_LINUX_NAME)
+BINARY_MACOS_DIR = ./dist/$(TAR_MACOS_NAME)
 
 # docker
 IMAGE_REGISTRY = docker.io
@@ -55,11 +57,11 @@ build-linux:
 
 .PHONY: compress-linux
 compress-linux:
-	tar -czvf $(BINARY_LINUX_DIR).tar.gz $(BINARY_LINUX_DIR)
+	cd dist; tar -czvf $(TAR_LINUX_NAME).tar.gz $(TAR_LINUX_NAME)
 
 .PHONY: compress-macos
 compress-macos:
-	tar -czvf $(BINARY_MACOS_DIR).tar.gz $(BINARY_MACOS_DIR)
+	cd dist; tar -czvf $(TAR_MACOS_NAME).tar.gz $(TAR_MACOS_NAME)
 
 .PHONY: build-macos
 build-macos:
