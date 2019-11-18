@@ -7,11 +7,11 @@
 To install the binary, you can use cURL or Wget:
 
 ```sh
-curl -o- https://raw.githubusercontent.com/craicoverflow/kubectl-console/v1.0.2/scripts/install.sh | bash
+curl -o- https://raw.githubusercontent.com/craicoverflow/kubectl-console/v1.0.3/scripts/install.sh | bash
 ```
 
 ```sh
-wget -gO- https://raw.githubusercontent.com/craicoverflow/kubectl-console/v1.0.2/scripts/install.sh | bash
+wget -gO- https://raw.githubusercontent.com/craicoverflow/kubectl-console/v1.0.3/scripts/install.sh | bash
 ```
 
 ## Usage
