@@ -1,7 +1,7 @@
 #!/bin/sh
 
 repo_url="https://github.com/craicoverflow/kubectl-console"
-release_tag=v1.0.2
+release_tag=v1.0.3
 plugin_file="https://raw.githubusercontent.com/craicoverflow/kubectl-console/$release_tag/plugin.yaml"
 tmp_dir="/tmp"
 binary_name=console
@@ -88,4 +88,3 @@ function init {
 }
 
 init
-# get_oc_plugin_path
