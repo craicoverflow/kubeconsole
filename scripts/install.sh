@@ -46,10 +46,10 @@ function rm_tmp_dir {
 function get_oc_plugin_path {
     if [ -n "$KUBECTL_PLUGINS_PATH" ]; then
         echo $KUBECTL_PLUGINS_PATH
-    elif [ -n "$XDG_DATA_DIRS/kubectl/plugins" ]; then
-        echo "$XDG_DATA_DIRS/kubectl/plugins"
+        return
     else
         echo "$HOME/.kube/plugins"
+        return
     fi
 }
 
@@ -65,9 +65,6 @@ function install_plugin {
     tar -xvf $tar_full_name
     rm -rf $tar_full_name
 
-    sudo cp "$tar_name/$binary_name" "/usr/local/bin/kubectl-$binary_name"
-    sudo cp "$tar_name/$binary_name" "/usr/local/bin/oc-$binary_name"
-
     kube_plugin_dir="$(get_oc_plugin_path)"
     plugin_dir="$kube_plugin_dir/kubectl-$binary_name"
 
@@ -80,6 +77,10 @@ function install_plugin {
     cp "$tar_name/$binary_name" $plugin_dir
     cd $plugin_dir
     wget $plugin_file
+
+    echo $plugin_dir
+    sudo ln -sf "$PWD/kubectl-$binary_name" "/usr/local/bin/kubectl-$binary_name"
+    sudo ln -sf "$PWD/kubectl-$binary_name" "/usr/local/bin/oc-$binary_name"
 }
 
 function init {
@@ -87,3 +88,4 @@ function init {
 }
 
 init
+# get_oc_plugin_path
