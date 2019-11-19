@@ -77,10 +77,9 @@ function install_plugin {
     cp "$tar_name/$binary_name" $plugin_dir
     cd $plugin_dir
     wget $plugin_file
-
-    echo $plugin_dir
-    sudo ln -sf "$PWD/kubectl-$binary_name" "/usr/local/bin/kubectl-$binary_name"
-    sudo ln -sf "$PWD/kubectl-$binary_name" "/usr/local/bin/oc-$binary_name"
+    
+    sudo ln -sf "$PWD/$binary_name" "/usr/local/bin/kubectl-$binary_name"
+    sudo ln -sf "$PWD/$binary_name" "/usr/local/bin/oc-$binary_name"
 }
 
 function init {
