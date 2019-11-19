@@ -1,8 +1,8 @@
 #!/bin/sh
 
-repo_url="https://github.com/craicoverflow/kubectl-console"
+repo_url="https://github.com/craicoverflow/kubeconsole"
 release_tag=v1.0.4
-plugin_file="https://raw.githubusercontent.com/craicoverflow/kubectl-console/$release_tag/plugin.yaml"
+plugin_file="https://raw.githubusercontent.com/craicoverflow/kubeconsole/$release_tag/plugin.yaml"
 tmp_dir="/tmp"
 binary_name=console
 
