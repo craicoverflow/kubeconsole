@@ -42,7 +42,7 @@ To use `oc` < 4, enter:
 
 ```sh
 $ oc plugin console
-Opening in browser
+Opening in browser...
 ```
 
 ## Flags
